@@ -25,22 +25,22 @@ const Login = ({ classes, setNewUser }) => {
   };
 
   return (
-  <div className={classes.root}>
-  <Paper className={classes.paper}>
-    <Avatar className={classes.avatar}>
-      <Lock />
-    </Avatar>
-    <Typography variant="title">Login as Existing User</Typography>
+    <div className={classes.root}>
+      <Paper className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <Lock />
+        </Avatar>
+        <Typography variant="title">Login as Existing User</Typography>
 
-    <Mutation
-      mutation={LOGIN_MUTATION}
-      variables={{ username, password }}
-    >
-      {(tokenAuth, { loading, error, called, client }) => {
-        return ( 
-          <form
-            onSubmit={event => handleSubmit(event, tokenAuth, client)} className={classes.form}
-          >
+        <Mutation
+          mutation={LOGIN_MUTATION}
+          variables={{ username, password }}
+        >
+          {(tokenAuth, { loading, error, called, client }) => {
+            return ( 
+              <form
+                onSubmit={event => handleSubmit(event, tokenAuth, client)} className={classes.form}
+              >
                 <FormControl margin="normal" required fullWidth>
                   <InputLabel htmlFor="username">Username</InputLabel>
                   <Input id="username" onChange={event => setUsername(event.target.value)} />
