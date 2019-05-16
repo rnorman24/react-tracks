@@ -15,20 +15,25 @@ import ClearIcon from "@material-ui/icons/Clear";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 
 const CreateTrack = ({ classes }) => {
-  const [open, setOpen] = useState(false)
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [file, setFile] = useState('')
+  const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [file, setFile] = useState("");
 
   const handleAudioChange = event => {
-    const selectedFile = event.target.files[0]
-    setFile(selectedFile)
-  }
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+  };
 
   return (
     <>
       {/* Create Track Button/ */}
-      <Button onClick={() => setOpen(true)} variant="fab" className={classes.fab} color="secondary">
+      <Button
+        onClick={() => setOpen(true)}
+        variant="fab"
+        className={classes.fab}
+        color="secondary"
+      >
         {open ? <ClearIcon /> : <AddIcon />}
       </Button>
 
@@ -51,7 +56,7 @@ const CreateTrack = ({ classes }) => {
             <FormControl fullWidth>
               <TextField
                 multiline
-                rows='4'
+                rows="4"
                 label="Description"
                 placeholder="Add Description"
                 onChange={event => setDescription(event.target.value)}
@@ -63,14 +68,14 @@ const CreateTrack = ({ classes }) => {
                 id="audio"
                 required
                 type="file"
-                accept='audio/*'
+                accept="audio/*"
                 className={classes.input}
                 onChange={handleAudioChange}
               />
               <label htmlFor="audio">
                 <Button
                   variant="oulined"
-                  color={file ? 'secondary' : "inherit"}
+                  color={file ? "secondary" : "inherit"}
                   component="span"
                   className={classes.button}
                 >
@@ -82,7 +87,9 @@ const CreateTrack = ({ classes }) => {
             </FormControl>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => setOpen(false)} className={classes.cancel}>Cancel</Button>
+            <Button onClick={() => setOpen(false)} className={classes.cancel}>
+              Cancel
+            </Button>
             <Button
               disabled={!title.trim() || !description.trim() || !file}
               type="submit"
