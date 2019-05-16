@@ -6,7 +6,7 @@ const Loading = ({ classes }) => (
   <div className={classes.root}>
     <CircularProgress className={classes.progress} />
   </div>
-)
+);
 
 const styles = theme => ({
   root: {
