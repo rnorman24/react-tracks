@@ -9,12 +9,12 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelActions from "@material-ui/core/ExpansionPanelActions";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-import AudioPlayer from '../Shared/AudioPlayer'
-import LikeTrack from './LikeTrack'
-import DeleteTrack from './DeleteTrack'
-import UpdateTrack from './UpdateTrack'
+import AudioPlayer from "../Shared/AudioPlayer";
+import LikeTrack from "./LikeTrack";
+import DeleteTrack from "./DeleteTrack";
+import UpdateTrack from "./UpdateTrack";
 
 const TrackList = ({ classes, tracks }) => (
   <List>
@@ -25,21 +25,24 @@ const TrackList = ({ classes, tracks }) => (
             <LikeTrack />
             <ListItemText
               primaryTypographyProps={{
-                variant: 'subheading',
-                color: 'primary'
+                variant: "subheading",
+                color: "primary"
               }}
               primary={track.title}
-              // secondary={
-              //   <Link className={classes.link} to={`/profile/${track.postedBy.id}`}>
-              //     {track.postedBy.username}
-              //   </Link>
-              // }
+              secondary={
+                <Link
+                  className={classes.link}
+                  to={`/profile/${track.postedBy.id}`}
+                >
+                  {track.postedBy.username}
+                </Link>
+              }
             />
             <AudioPlayer />
           </ListItem>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.details}>
-          <Typography variant='body1'>{track.description}</Typography>
+          <Typography variant="body1">{track.description}</Typography>
         </ExpansionPanelDetails>
         <ExpansionPanelActions>
           <UpdateTrack />
@@ -48,7 +51,7 @@ const TrackList = ({ classes, tracks }) => (
       </ExpansionPanel>
     ))}
   </List>
-)
+);
 
 const styles = {
   root: {
