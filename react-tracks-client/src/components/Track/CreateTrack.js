@@ -26,16 +26,16 @@ const CreateTrack = ({ classes }) => {
   const [description, setDescription] = useState("");
   const [file, setFile] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [fileError, setFileError] = useState("")
+  const [fileError, setFileError] = useState("");
 
   const handleAudioChange = event => {
     const selectedFile = event.target.files[0];
     const fileSizeLimit = 10000000; //10mb
     if (selectedFile && selectedFile.size > fileSizeLimit) {
-      setFileError(`${selectedFile.name}: File size too large`)
+      setFileError(`${selectedFile.name}: File size too large`);
     } else {
       setFile(selectedFile);
-      setFileError('')
+      setFileError("");
     }
   };
 
@@ -84,9 +84,9 @@ const CreateTrack = ({ classes }) => {
           console.log({ data });
           setSubmitting(false);
           setOpen(false);
-          setTitle("")
-          setDescription("")
-          setFile("")
+          setTitle("");
+          setDescription("");
+          setFile("");
         }}
         refetchQueries={() => [{ query: GET_TRACKS_QUERY }]}
       >
