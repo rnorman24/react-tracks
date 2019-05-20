@@ -13,9 +13,9 @@ const SearchTracks = ({ classes }) => {
         <IconButton>
           <ClearIcon />
         </IconButton>
-        <TextField 
+        <TextField
           fullWidth
-          placeholder='Search All Tracks'
+          placeholder="Search All Tracks"
           InputProps={{
             disableUnderline: true
           }}
@@ -25,7 +25,7 @@ const SearchTracks = ({ classes }) => {
         </IconButton>
       </Paper>
     </form>
-  )
+  );
 };
 
 const styles = theme => ({
