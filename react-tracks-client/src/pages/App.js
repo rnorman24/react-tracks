@@ -10,7 +10,7 @@ import Loading from "../components/Shared/Loading";
 import Error from "../components/Shared/Error";
 
 const App = ({ classes }) => {
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState([]);
 
   return (
     <div className={classes.container}>
@@ -20,7 +20,7 @@ const App = ({ classes }) => {
         {({ data, loading, error }) => {
           if (loading) return <Loading />;
           if (error) return <Error error={error} />;
-          const tracks = searchResults.length > 0 ? searchResults : data.tracks
+          const tracks = searchResults.length > 0 ? searchResults : data.tracks;
 
           return <TrackList tracks={tracks} />;
         }}

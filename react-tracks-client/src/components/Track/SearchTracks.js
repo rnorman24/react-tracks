@@ -17,7 +17,7 @@ const SearchTracks = ({ classes, setSearchResults }) => {
       query: SEARCH_TRACKS_QUERY,
       variables: { search }
     });
-    setSearchResults(res.data.tracks)
+    setSearchResults(res.data.tracks);
   };
   return (
     <ApolloConsumer>
