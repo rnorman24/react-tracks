@@ -10,13 +10,13 @@ import SearchIcon from "@material-ui/icons/Search";
 
 const SearchTracks = ({ classes, setSearchResults }) => {
   const [search, setSearch] = useState("");
-  const inputEl = useRef()
+  const inputEl = useRef();
 
   const clearSearchInput = () => {
-    setSearchResults([])
-    setSearch('')
-    inputEl.current.focus()
-  }
+    setSearchResults([]);
+    setSearch("");
+    inputEl.current.focus();
+  };
 
   const handleSubmit = async (event, client) => {
     event.preventDefault();
