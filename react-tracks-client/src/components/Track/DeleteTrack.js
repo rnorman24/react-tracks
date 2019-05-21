@@ -30,7 +30,7 @@ const DeleteTrack = ({ track }) => {
 };
 
 const DELETE_TRACK_MUTATION = gql`
-  mutation(trackId: Int!) {
+  mutation($trackId: Int!) {
     deleteTrack(trackId: $trackId) {
       trackId
     }
