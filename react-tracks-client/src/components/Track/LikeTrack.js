@@ -5,17 +5,17 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import IconButton from "@material-ui/core/IconButton";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 
-import { UserContext, ME_QUERY } from '../../Root'
+import { UserContext, ME_QUERY } from "../../Root";
 
 const LikeTrack = ({ classes, trackId, likeCount }) => {
-  const currentUser = useContext(UserContext)
+  const currentUser = useContext(UserContext);
 
   const handleDisableLikedTrack = () => {
-    const userLikes = currentUser.likeSet
-    const isTrackLiked = userLikes.findIndex(({ track }) => 
-    track.id === trackId) > -1
-    return isTrackLiked
-  }
+    const userLikes = currentUser.likeSet;
+    const isTrackLiked =
+      userLikes.findIndex(({ track }) => track.id === trackId) > -1;
+    return isTrackLiked;
+  };
 
   return (
     <Mutation
