@@ -10,7 +10,7 @@ import Header from "./components/Shared/Header";
 import Loading from "./components/Shared/Loading";
 import Error from "./components/Shared/Error";
 
-export const UserContext = React.createContext()
+export const UserContext = React.createContext();
 
 const Root = () => (
   <Query query={ME_QUERY}>
