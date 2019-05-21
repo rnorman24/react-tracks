@@ -7,9 +7,7 @@ import { UserContext } from "../../Root";
 const DeleteTrack = ({ track }) => {
   const currentUser = useContext(UserContext);
   const isCurrentUser = currentUser.id === track.postedBy.id;
-};
 
-const DeleteTrack = () => {
   return isCurrentUser && <div>DeleteTrack</div>;
 };
 
