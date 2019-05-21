@@ -7,10 +7,18 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 
 const LikeTrack = ({ classes, trackId, likeCount }) => {
   return (
-    <Mutation mutation={CREATE_LIKE_MUTATION} variables={{ trackId }}>
+    <Mutation
+    mutation={CREATE_LIKE_MUTATION}
+    variables={{ trackId }}
+    onCompleted={data => {
+      console.log({data})
+    }}
+    >
       {createLike => (
-        <IconButton onClick={event => {
+        <IconButton
+        onClick={event => {
           event.stopPropagation()
+          createLike()
         }}
         className={classes.iconButton}
         >
