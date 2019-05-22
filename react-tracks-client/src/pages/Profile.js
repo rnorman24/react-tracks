@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import ThumbUpIcon from "@material-ui/icons/ThumbUpTwoTone";
 import AudiotrackIcon from "@material-ui/icons/AudiotrackTwoTone";
 import Divider from "@material-ui/core/Divider";
-import format from 'date-fns/format'
+import format from "date-fns/format";
 
 import AudioPlayer from "../components/Shared/AudioPlayer";
 import Error from "../components/Shared/Error";
@@ -31,7 +31,10 @@ const Profile = ({ classes, match }) => {
               <CardHeader
                 avatar={<Avatar>{data.user.username[0]}</Avatar>}
                 title={data.user.username}
-                subheader={`Joined ${format(data.user.dateJoined, 'MMM Do, YYYY')}`}
+                subheader={`Joined ${format(
+                  data.user.dateJoined,
+                  "MMM Do, YYYY"
+                )}`}
               />
             </Card>
 
