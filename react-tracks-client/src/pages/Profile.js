@@ -47,7 +47,7 @@ const Profile = ({ classes, match }) => {
               {data.user.trackSet.map(track => (
                 <div key={track.id}>
                   <Typography>
-                    {track.title} - {track.likes.length} Likes
+                    {track.title} &#183; {track.likes.length} Likes
                   </Typography>
                   <AudioPlayer url={track.url} />
                   <Divider className={classes.divider} />
@@ -59,11 +59,12 @@ const Profile = ({ classes, match }) => {
             <Paper elevation={1} className={classes.paper}>
               <Typography variant="title" className={classes.title}>
                 <ThumbUpIcon className={classes.thumbIcon} />
+                Liked Tracks
               </Typography>
               {data.user.likeSet.map(({ track }) => (
                 <div key={track.id}>
                   <Typography>
-                    {track.title} - {track.likes.length} Like{" "}
+                    {track.title} &#183; {track.likes.length} Likes &#183;{" "}
                     {track.postedBy.username}
                   </Typography>
                   <AudioPlayer url={track.url} />
